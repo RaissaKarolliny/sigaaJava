@@ -1,0 +1,8 @@
+import java.util.List;
+
+public class Aluno extends{
+    private String nome;
+    private int idade;
+    private String curso;
+    private Ficha ficha;
+}
