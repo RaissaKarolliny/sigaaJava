@@ -5,6 +5,9 @@ public class Cadeiras {
     private String materia;
     private String local;
     private String horario;
+    private float total = 0;
+    private float media;
+
     List<Integer> notas = new ArrayList<Integer>();
     
     public Cadeiras(String materia, String local, String horario) {
@@ -12,6 +15,23 @@ public class Cadeiras {
         this.local = local;
         this.horario = horario;
        
+    }
+
+    void adicionaNotas(int o){
+        notas.add(o);
+    }
+    void calculaMedia(){
+        for(Integer o: notas){
+            total += o;
+        }
+        media = total / notas.size();
+
+    }
+
+    void listarNotas(){
+        for(Integer o: notas){
+        System.out.println(o + "\n");
+        }
     }
 
     public String getMateria() {
@@ -41,7 +61,7 @@ public class Cadeiras {
 
     @Override
     public String toString() {
-        return "Cadeiras [materia=" + materia + ", local=" + local + ", horario=" + horario + ", notas=" + notas + "]";
+        return "Cadeiras: \n materia:" + materia + ", local:" + local + ", horario: " + horario + ", notas: " + notas + "\n";
     }
     
 }
